@@ -1,0 +1,49 @@
+<div class="container">
+  <input type="checkbox" id="check">
+
+  <div class="login form">
+    <header>Login</header>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+      <input type="text" placeholder="Enter your email" name="email" ngModel>
+      <input type="password" placeholder="password" name="password" ngModel>
+      <div class="container-message">
+        <div class="centered-content">
+          <div *ngIf="registrationError" class="error-message">
+            {{ registrationError }}
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="button" value="Signup">
+    </form>
+    <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+    </div>
+  </div>
+
+
+
+  <div class="registration form">
+    <header>Signup</header>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+      <input type="text" placeholder="Enter your email" name="email" ngModel>
+      <input type="password" placeholder="Create a password" name="password" ngModel>
+      <input type="password" placeholder="Confirm your password" name="passwordConfirmation" ngModel>
+
+      <div class="container-message">
+        <div class="centered-content">
+          <div *ngIf="registrationError" class="error-message">
+            {{ registrationError }}
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="button" value="Signup">
+    </form>
+    <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+    </div>
+  </div>
+</div>
