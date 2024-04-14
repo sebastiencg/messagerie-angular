@@ -52,7 +52,7 @@ export class JwtService {
     }
 
   }
-  async updateProfile(token:any,username:any,visibility:any){
+  async updateProfile(token:any,username:any,visibility:boolean){
     try {
       const response = await axios.patch(this.url+`/api/profile/update/`,{
         "username": username,

@@ -189,7 +189,6 @@ export class ChatComponent {
     this.allRequestFriendsSend = await this.relationsService.takeRequestFriendSend(this.token)
 
     const listItemsHTML = this.allRequestFriendsSend.map((request: RequestFriend) => {
-      console.log(request.statue);
       if (request.statue=="on hold"){
         return `
       <li class="list-group-item d-flex justify-content-between align-items-center">
